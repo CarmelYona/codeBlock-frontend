@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.39ac5ac4.css",
+    "main.js": "/static/js/main.fe2d20b5.js",
+    "static/media/cv.pdf": "/static/media/cv.9d2a50ba64e2d4f22f8f.pdf",
+    "static/media/me.png": "/static/media/me.2e23cf53a5674010ef60.png",
+    "static/media/me2.png": "/static/media/me2.5c15875dd14dd0fbae46.png",
+    "static/media/NetApp.jpeg": "/static/media/NetApp.706f89a54d85e30b71e1.jpeg",
+    "static/media/Mr.BitCoin-img.jpeg": "/static/media/Mr.BitCoin-img.6e1e6fab6686f7a2205b.jpeg",
+    "static/media/BitTheList.jpeg": "/static/media/BitTheList.0989e5ab8326868e3ec3.jpeg",
+    "static/media/OTP-Service.jpeg": "/static/media/OTP-Service.7649bdfeec47ec633333.jpeg",
+    "index.html": "/index.html",
+    "main.39ac5ac4.css.map": "/static/css/main.39ac5ac4.css.map",
+    "main.fe2d20b5.js.map": "/static/js/main.fe2d20b5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39ac5ac4.css",
+    "static/js/main.fe2d20b5.js"
+  ]
+}

@@ -1,0 +1,32 @@
+// Flex 
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+// Other
+a {
+    color: $clr-primary;
+    transition: $transition;
+
+    :hover {
+        color: $clr-white;
+    }
+}
+
+.main-page {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: $clr-bg;
+
+    .page-body {
+        background-color: #ededed;
+        height: 90vh;
+        width: 90vw;
+        box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75);
+    }
+}

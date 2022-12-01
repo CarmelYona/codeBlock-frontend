@@ -1,0 +1,33 @@
+.lobby-page {
+    align-items: center;
+
+    h1 {
+        margin:30px 0 30px 0;
+    }
+
+    .code-block-list {
+        gap: 1rem;
+        width: 36rem;
+        justify-content: space-around;
+
+        .code-block-preview {
+            height: 10rem;
+            width: 9rem;
+            background-color: rgb(123, 123, 123);
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            justify-content: center;
+            transition: $transition;
+
+            &:hover {
+                background: darken(rgba(123, 123, 123), 20%);
+                color: $clr-white;
+            }
+
+            h4{
+                margin-top:10px;
+            }
+        }
+    }
+}

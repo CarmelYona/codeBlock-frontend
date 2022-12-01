@@ -1,0 +1,22 @@
+.user-msg {
+    position: fixed;
+    // top: 50px;
+    // right: -550px;
+    inset: 88px 40px auto auto;
+    min-width: 200px;
+    height: 40px;
+    background-color: rgba(83, 99, 45, 0.782);
+    color: beige;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.success {
+    background-color: rgb(79, 122, 79);
+    right: 50px;
+}
+
+.fail {
+    background-color: rgb(177, 94, 94);
+}

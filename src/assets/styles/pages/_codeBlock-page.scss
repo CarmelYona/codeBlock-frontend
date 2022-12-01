@@ -1,0 +1,33 @@
+.codeBlock-page {
+    align-items: center;
+    
+    
+    .codeBlock-page-wrapper {
+        background-color: #0d1117;
+        width: 100%;
+        height: 100%;
+        // outline-style: none;
+
+        :focus{
+            outline: none;
+        }
+
+        .codeBlock-page-header {
+            width: 100%;
+            align-items: center;
+            margin: 2rem 0 2rem 0;
+
+            h1,
+            h3 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+                color: $clr-white;
+            }
+        }
+
+        .codeBlock-wrapper{
+            margin-left: 5rem;
+            font-size: 1.5rem;
+        }
+    }
+}
