@@ -42,7 +42,6 @@ export function _Login() {
             username: data.get('email'),
             password: data.get('password'),
         }
-
         const user = await userService.login(credentials)
         maintainEntrance(user)
     }

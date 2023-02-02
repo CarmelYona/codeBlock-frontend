@@ -1,14 +1,14 @@
 .codeBlock-page {
     align-items: center;
-    
-    
+
+
     .codeBlock-page-wrapper {
         background-color: #0d1117;
         width: 100%;
         height: 100%;
         // outline-style: none;
 
-        :focus{
+        :focus {
             outline: none;
         }
 
@@ -25,9 +25,17 @@
             }
         }
 
-        .codeBlock-wrapper{
-            margin-left: 5rem;
+        .codeBlock-wrapper {
+            margin-left: 0.5rem;
             font-size: 1.5rem;
+
+            .cm-theme {
+                width: 99.5%;
+
+                :first-child {
+                    outline: none;
+                }
+            }
         }
     }
 }

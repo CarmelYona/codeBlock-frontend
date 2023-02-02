@@ -52,7 +52,7 @@ export const Student = () => {
         const id = link?.url?.split('/')[1].slice(1, link.url.length)
         setUserId(id)
     }
-    console.log(container)
+    
     return <section className="main-page">
         <div className="page-body">
             <Header />

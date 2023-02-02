@@ -1,17 +1,21 @@
 import React from "react"
-import Highlight from 'react-highlight'
-import 'highlight.js/styles/github-dark.css'
+import { javascript } from '@codemirror/lang-javascript'
+import { githubDark } from '@uiw/codemirror-theme-github'
+import CodeMirror from '@uiw/react-codemirror'
+// import Highlight from 'react-highlight'
+// import 'highlight.js/styles/github-dark.css'
 
 const CodeBlockInputCmp = (props) => {
     const { code, updateCode } = props
     return (
-        <div className="codeBlock-wrapper flex"
-            onInput={updateCode}
-            contentEditable={true}
-            suppressContentEditableWarning={true}>
-            <Highlight className="javascript">
-                {code}
-            </Highlight>
+        <div className="codeBlock-wrapper flex">
+            <CodeMirror
+                value={code}
+                readOnly={false}
+                extensions={[javascript()]}
+                theme={githubDark}
+                onChange={updateCode}
+            />
         </div>
     )
 }

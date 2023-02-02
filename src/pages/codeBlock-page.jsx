@@ -1,9 +1,10 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { onLoadCode, onUpdateCode } from "../store/action/codeBlock.action"
-import Highlight from 'react-highlight'
+import { javascript } from '@codemirror/lang-javascript'
+import { githubDark } from '@uiw/codemirror-theme-github'
+import CodeMirror from '@uiw/react-codemirror'
 import { loadLink } from "../store/action/link.actions"
-import 'highlight.js/styles/github-dark.css'
 import { userService } from "../services/user.service"
 import { socketService } from "../services/socket.service"
 import { useState } from "react"
@@ -38,17 +39,20 @@ export const CodeBlock = () => {
     }
 
     //making deep copy of the state and updating it
-    const updateCode = async (ev) => {
-        const val = ev.target.textContent
+    const updateCode = async (newCode) => {
+        // const val = ev.target.textContent
         const copyCode = JSON.parse(JSON.stringify(codeBlock))
         if (!copyCode.code.length) return
-        copyCode.code = val
+        copyCode.code = newCode
         await dispatch(onUpdateCode(copyCode))
         checkSolution(copyCode)
     }
 
     const checkSolution = (codeToCheck) => {
-        if (codeToCheck.code === codeToCheck.solution) {
+        const pureCodeToCheck = codeToCheck.code.replaceAll(/\s/g, '')
+        const pureSolutionToCHeck = codeToCheck.solution.replaceAll(/\s/g, '')
+
+        if (pureCodeToCheck === pureSolutionToCHeck) {
             setUserMsg({ txt: 'You did it!, well done :)', type: 'success' })
             setTimeout(() => (setUserMsg(null)), 3000)
         }
@@ -67,9 +71,12 @@ export const CodeBlock = () => {
                     </div>
                     {loggedInUser.isMentor ?
                         <div className="codeBlock-wrapper flex">
-                            <Highlight className="javascript">
-                                {codeBlock.code}
-                            </Highlight>
+                            <CodeMirror
+                                value={codeBlock.code}
+                                readOnly={true}
+                                extensions={[javascript()]}
+                                theme={githubDark}
+                            />
                         </div>
                         :
                         <>
