@@ -1,17 +1,20 @@
 @media screen and (max-width:600px) {
     .header {
-        padding: 4px;
+        padding: 0px;
     }
 
     .home-page-body {
         flex-direction: column-reverse;
         height: auto !important;
-        gap: 2.5rem;
-        padding: 2.5rem !important;
+        gap: 0.5rem;
+        padding: 0.5rem !important;
 
         .student-section {
             align-items: center;
-            gap: 3.5rem !important;
+            gap: 0.5rem !important;
+            h2{
+                font-size: 1.1rem;
+            }
         }
     }
 
