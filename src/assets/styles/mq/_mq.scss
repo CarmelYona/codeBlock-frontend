@@ -1,0 +1,46 @@
+@media screen and (max-width:600px) {
+    .header {
+        padding: 4px;
+    }
+
+    .home-page-body {
+        flex-direction: column-reverse;
+        height: auto !important;
+        gap: 2.5rem;
+        padding: 2.5rem !important;
+
+        .student-section {
+            align-items: center;
+            gap: 3.5rem !important;
+        }
+    }
+
+    .lobby-page {
+        height: 100%;
+
+        .code-block-list {
+            height: 70%;
+            flex-direction: column;
+            width: 50%;
+
+            .code-block-preview {
+                width: 100%;
+            }
+        }
+    }
+
+    .codeBlock-page {
+
+        .codeBlock-page-wrapper {
+            .codeBlock-page-header {
+                h3 {
+                    font-size: 1rem;
+                }
+            }
+            .codeBlock-wrapper{
+                margin-left: 0;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
