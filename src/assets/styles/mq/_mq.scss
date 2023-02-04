@@ -1,19 +1,49 @@
 @media screen and (max-width:600px) {
-    .header {
-        padding: 0px;
+    header {
+
+        .header-wrapper {
+            padding: 10px;
+
+            h1 {
+                font-size: 1.5rem;
+
+                span {
+                    font-size: 0.9rem;
+                }
+            }
+
+            .mentor-btn {
+                background-color: #30ad27;
+                color: white;
+                font-weight: bold;
+            }
+
+            .loguot-btn {
+                background-color: #661807;
+                color: white;
+                font-weight: bold;
+            }
+        }
     }
 
     .home-page-body {
         flex-direction: column-reverse;
         height: auto !important;
         gap: 0.5rem;
-        padding: 0.5rem !important;
+        padding: .5rem !important;
 
         .student-section {
             align-items: center;
-            gap: 0.5rem !important;
-            h2{
+            gap: 2.5rem !important;
+
+            h2 {
                 font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .student-btn{
+                height: 60px;
+                width: 120px;
             }
         }
     }
@@ -40,7 +70,8 @@
                     font-size: 1rem;
                 }
             }
-            .codeBlock-wrapper{
+
+            .codeBlock-wrapper {
                 margin-left: 0;
                 font-size: 0.8rem;
             }

@@ -11,8 +11,8 @@ export const Header = () => {
         navigate('/')
     }
 
-    return <section className="header">
-        <div className="header flex">
+    return <header>
+        <div className="header-wrapper flex">
             <h1 onClick={onLogout}>codeBlock <span><TbBrandJavascript /></span></h1>
             {loggedInUser ?
                 <button className="loguot-btn" onClick={onLogout}>Logut</button>
@@ -21,5 +21,5 @@ export const Header = () => {
             }
 
         </div>
-    </section>
+    </header>
 }
