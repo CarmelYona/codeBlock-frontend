@@ -7,10 +7,12 @@ import { UserModal } from "../cmps/user-modal"
 import { userService } from "../services/user.service"
 import { onAddLink, onRemoveLink } from "../store/action/link.actions"
 import { socketService } from "../services/socket.service"
-import { onLoadCodes } from "../store/action/codeBlock.action"
+import { onLoadCodes, onRemoveCodeBlock } from "../store/action/codeBlock.action"
 import { useOutsideClick } from '../hooks/useClickOutsideParent'
+import { useNavigate } from "react-router-dom"
 
 export function Lobby() {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const { codeBlocks } = useSelector((storeState) => storeState.codeBlockModule)
     const [users, setUsers] = useState(null)
@@ -50,14 +52,26 @@ export function Lobby() {
         if (linkId) await dispatch(onRemoveLink(linkId))
     }
 
+    const addCodeBlock = () => {
+        navigate('/addCodeBlock')
+    }
+
+    const removeCodeBlock = async (ev, codeBlockId) => {
+        ev.stopPropagation()
+        await dispatch(onRemoveCodeBlock(codeBlockId))
+    }
+
     if (!codeBlocks && !users) return <div>Loading..</div>
     return <div className="main-page">
         <div ref={parentRef} className="page-body flex column">
             <Header />
             <section className="lobby-page flex column">
-                <h1>Choose code block</h1>
-                <CodeBlockList codeBlocks={codeBlocks} setCodeBlockId={setCodeBlockId} />
+                <h1>Choose Code Block</h1>
+                <CodeBlockList codeBlocks={codeBlocks} setCodeBlockId={setCodeBlockId} removeCodeBlock={removeCodeBlock} />
                 {codeBlockId && <UserModal wrapperRef={wrapperRef} parentRef={parentRef} users={users} createLink={createLink} link={link} removeLink={removeLink} />}
+                <div className="floating-add-btn">
+                    <button onClick={() => addCodeBlock()} className="btn btn-add">+Add New</button>
+                </div>
             </section>
         </div>
     </div >

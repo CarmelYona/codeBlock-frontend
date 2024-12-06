@@ -49,7 +49,6 @@ export function _Login() {
     // maintaining entrance by validating the user
     const maintainEntrance = (user) => {
 
-        console.log(userId)
         if (userId === 'mentor') {
             // by mentor entrance, checking if does a mentor 
             if (user.isMentor) {

@@ -5,10 +5,16 @@ import { socketService } from './socket.service'
 export const codeBlockService = {
     getCodeBlocks,
     getById,
-    updateCodeBlock
+    updateCodeBlock,
+    addCodeBlock,
+    removeCodeBlock
 }
 
 window.us = codeBlockService
+
+async function removeCodeBlock(id) {
+    await httpService.delete(`codeBlock/${id}`)
+}
 
 async function getCodeBlocks() {
     let codeBlocks = await httpService.get('codeBlock')
@@ -20,8 +26,12 @@ async function getById(id) {
     return codeBlock
 }
 
-async function updateCodeBlock(code){
-    const codeBlock = await httpService.put(`codeBlock/${code._id}`,code)
+async function updateCodeBlock(code) {
+    const codeBlock = await httpService.put(`codeBlock/${code._id}`, code)
     socketService.emit('update code', codeBlock)
-    return code 
+    return code
+}
+
+async function addCodeBlock(codeblock) {
+    return await httpService.post(`codeBlock/add`, codeblock)
 }
